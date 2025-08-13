@@ -1,0 +1,19 @@
+#Django is the main web framework
+Django~=5.2.4
+
+# Django REST Framework for building RESTful APIs
+djangorestframework~=3.16.0
+
+# Djongo connects Django ORM to MongoDB
+djongo
+
+psycopg2-binary
+# Twilio is used to send SMS payment reminders
+twilio
+
+# Python-Decouple helps manage environment variables securely (e.g., API keys)
+python-decouple
+
+pip freeze > requirements.txt
+
+django-filter~=25.1
