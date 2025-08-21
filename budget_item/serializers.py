@@ -2,7 +2,7 @@ from rest_framework import serializers
 from category.serializers import CategorySerializer
 from category.models import Category
 from .models import BudgetItem
-from core.budget_item_validator import BudgetItemValidator
+from utils.budget_item_validator import BudgetItemValidator
 
 class BudgetItemSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)

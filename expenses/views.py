@@ -7,14 +7,14 @@ from django.db.models import Q
 from .models import Expenses
 from .serializers import ExpenseSerializer
 from rest_framework import status
-from core.permissions import IsAdminOrOwner, IsAdminOnly
+from utils.permissions import IsAdminOrOwner, IsAdminOnly
 from rest_framework import generics
 from rest_framework.response import Response
-from core.pagination import CustomPagination
-from core.budget_summary import get_budget_overview
-from core.uncategorized_expenses import get_uncategorized_expenses
-from core.category_summary import get_category_summary
-from core.mixins import BudgetPlanMixin
+from utils.pagination import CustomPagination
+from utils.budget_summary import get_budget_overview
+from utils.uncategorized_expenses import get_uncategorized_expenses
+from utils.category_summary import get_category_summary
+from utils.mixins import BudgetPlanMixin
 
 class ExpenseSearchView(BudgetPlanMixin, generics.ListAPIView):
     serializer_class = ExpenseSerializer

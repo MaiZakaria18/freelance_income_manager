@@ -2,6 +2,8 @@ from rest_framework import serializers
 from .models import User
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.exceptions import AuthenticationFailed
+from email_validator import validate_email, EmailNotValidError
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -9,6 +11,13 @@ class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'email', 'username', 'password', 'profession', 'location', 'avg_monthly_income', 'role']
+
+    def validate_email(self, value):
+        try:
+            v = validate_email(value)
+            return v.email
+        except EmailNotValidError as e:
+            raise serializers.ValidationError(str(e))
 
     def create(self, validated_data):
         password = validated_data.pop('password')

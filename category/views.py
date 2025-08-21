@@ -1,5 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from core.permissions import IsAdminOnly, IsAdminOrOwner
+from utils.permissions import IsAdminOnly, IsAdminOrOwner
 from rest_framework import viewsets, filters
 from rest_framework import generics
 from rest_framework.response import Response

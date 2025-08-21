@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from .models import User
 from .serializers import RegisterSerializer, CustomTokenObtainSerializer, UserAdminSerializer
-from core.permissions import IsAdminOnly
+from utils.permissions import IsAdminOnly
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()

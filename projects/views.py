@@ -1,7 +1,7 @@
 from django.db import IntegrityError
 from rest_framework import  filters, viewsets
 from rest_framework.permissions import IsAuthenticated
-from core.permissions import IsAdminOnly
+from utils.permissions import IsAdminOnly
 from .filters import ProjectFilter
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -9,7 +9,7 @@ from django.db.models import Q
 from .models import Project
 from django.core.paginator import Paginator
 from .serializers import ProjectSerializer
-from core.permissions import IsAdminOrOwner
+from utils.permissions import IsAdminOrOwner
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework.exceptions import ValidationError

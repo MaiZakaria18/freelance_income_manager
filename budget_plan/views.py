@@ -2,14 +2,14 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied, NotFound
 from rest_framework.generics import get_object_or_404
-from core.permissions import IsAdminOrOwner
-from core.pagination import CustomPagination
+from utils.permissions import IsAdminOrOwner
+from utils.pagination import CustomPagination
 from django.db.models import Q
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from budget_plan.models import BudgetPlan
 from budget_plan.serializers import BudgetPlanSerializer
-from core.permissions import IsAdminOnly
+from utils.permissions import IsAdminOnly
 from .filters import BudgetPlanFilter
 
 

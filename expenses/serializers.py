@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from expenses.models import Expenses
-from core.expenses_validation import ExpenseBudgetValidationMixin
+from utils.expenses_validation import ExpenseBudgetValidationMixin
 from budget_item.models import BudgetItem
 
 class ExpenseSerializer(serializers.ModelSerializer, ExpenseBudgetValidationMixin):

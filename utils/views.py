@@ -16,7 +16,7 @@ from projects.filters import ProjectFilter
 from budget_plan.filters import BudgetPlanFilter
 from budget_item.filter import BudgetItemFilter
 
-from core.pagination import CustomPagination
+from utils.pagination import CustomPagination
 
 
 class AdminUserFullDataView(APIView):
