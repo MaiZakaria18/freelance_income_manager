@@ -24,7 +24,7 @@ class TipRating(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('tip', 'user')  # يمنع اليوزر من التقييم أكثر من مرة
+        unique_together = ('tip', 'user')
 
     def __str__(self):
         return f"{self.value} by {self.user.email} for Tip {self.tip.id}"

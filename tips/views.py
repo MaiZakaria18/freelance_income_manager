@@ -49,7 +49,7 @@ class TipListView(generics.GenericAPIView):
 
 class TipCreateView(generics.CreateAPIView):
     serializer_class = TipSerializer
-    permission_classes = [permissions.IsAuthenticated]  # لازم يكون مسجل دخول
+    permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

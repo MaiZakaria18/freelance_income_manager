@@ -1,4 +1,3 @@
-# services/category_summary.py
 from decimal import Decimal
 from django.db.models import Sum
 from expenses.models import Expenses

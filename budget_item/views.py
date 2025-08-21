@@ -6,8 +6,7 @@ from rest_framework.response import Response
 from utils.permissions import IsAdminOrOwner
 from .filter import BudgetItemFilter
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
-from .models import BudgetItem, BudgetPlan
+from .models import BudgetItem
 from .serializers import BudgetItemSerializer
 from utils.pagination import CustomPagination
 from utils.mixins import BudgetPlanMixin

@@ -1,6 +1,6 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.exceptions import PermissionDenied, NotFound
+from rest_framework.exceptions import NotFound
 from rest_framework.generics import get_object_or_404
 from utils.permissions import IsAdminOrOwner
 from utils.pagination import CustomPagination

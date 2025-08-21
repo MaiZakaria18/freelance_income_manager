@@ -5,7 +5,7 @@ class ExpenseFilter(django_filters.FilterSet):
     transaction_date = django_filters.DateFromToRangeFilter()
     amount = django_filters.RangeFilter()
     tip = django_filters.CharFilter(lookup_expr='icontains')
-    category = django_filters.NumberFilter(field_name='category__category__id')  # FK relations
+    category = django_filters.NumberFilter(field_name='category__category__id')
 
     class Meta:
         model = Expenses

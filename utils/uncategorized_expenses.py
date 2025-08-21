@@ -1,4 +1,3 @@
-# services/uncategorized_expenses.py
 from django.db.models import Q, Sum
 from django.core.paginator import Paginator
 from expenses.models import Expenses

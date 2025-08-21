@@ -14,7 +14,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         return value
 
     def validate_project_name(self, value):
-        if self.instance:  # If updating
+        if self.instance:
             old_name = self.instance.project_name
             if value == old_name:
                 return value

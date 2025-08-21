@@ -84,7 +84,7 @@ class ExpenseCreateView(BudgetPlanMixin, generics.CreateAPIView):
 
 class ExpenseRetrieveView(generics.RetrieveAPIView):
     serializer_class = ExpenseSerializer
-    permission_classes = [IsAdminOrOwner]  # لو عندك صلاحيات خاصة
+    permission_classes = [IsAdminOrOwner]
 
     def get_expense(self):
         plan_id = self.kwargs.get('plan_id')

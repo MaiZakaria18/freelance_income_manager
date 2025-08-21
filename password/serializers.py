@@ -48,10 +48,8 @@ class ForgotPasswordSerializer(serializers.Serializer):
         user = User.objects.get(email=email)
         otp = str(random.randint(100000, 999999))
 
-        # حفظ OTP في قاعدة البيانات
         PasswordResetOTP.objects.create(user=user, otp=otp)
 
-        # إرسال الإيميل
         send_mail(
             subject="Your Password Reset OTP",
             message=f"Your OTP code is: {otp}",

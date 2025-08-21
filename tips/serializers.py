@@ -31,11 +31,9 @@ class TipRatingSerializer(serializers.ModelSerializer):
         user = request.user
         tip = data['tip']
 
-        # 1- منع تقييم المستخدم لنفسه
         if tip.user == user:
             raise serializers.ValidationError("You cannot rate your own tip.")
 
-        # 2- منع التقييم المكرر لنفس النصيحة
         if TipRating.objects.filter(user=user, tip=tip).exists():
             raise serializers.ValidationError("You have already rated this tip.")
 

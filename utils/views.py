@@ -25,15 +25,12 @@ class AdminUserFullDataView(APIView):
     def get(self, request, user_id):
         user = get_object_or_404(User, id=user_id)
 
-        # فلترة المشاريع
         project_qs = Project.objects.select_related('user').filter(user=user)
         project_qs = ProjectFilter(request.GET, queryset=project_qs).qs
 
-        # خطط الميزانية
         plan_qs = BudgetPlan.objects.select_related('user').filter(user=user)
         plan_qs = BudgetPlanFilter(request.GET, queryset=plan_qs).qs
 
-        # عناصر الميزانية
         item_qs = BudgetItem.objects.select_related('budget_plan', 'budget_plan__user').filter(budget_plan__user=user)
         item_qs = BudgetItemFilter(request.GET, queryset=item_qs).qs
 

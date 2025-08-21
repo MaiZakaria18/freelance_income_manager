@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 from budget_plan.models import BudgetPlan
 from budget_item.models import BudgetItem
-from category.models import Category
 
 class Expenses(models.Model):
     budget_plan = models.ForeignKey(BudgetPlan, on_delete=models.CASCADE)
